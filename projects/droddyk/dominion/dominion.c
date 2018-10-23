@@ -682,7 +682,7 @@ int great_hallCard(int currentPlayer, struct gameState *state, int handPos)
 int adventureCard(int currentPlayer, struct gameState *state)
 {
   int cardDrawn;
-  int drawntreasure; // drawntreasure should be initialized to 0
+  int drawntreasure = 0; // drawntreasure should be initialized to 0
   int z = 0;
   int temphand[MAX_HAND];
 
