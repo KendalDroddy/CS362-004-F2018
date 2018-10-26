@@ -27,19 +27,37 @@ int main()
   //int outpostTracker = G.outpostPlayed;
   int cardsInHand = G.handCount[0];
 
-  printf("Outpost state before playing outpost: %i\n", G.outpostPlayed);
-  printf("Hand count before playing outpost: %i\n", cardsInHand);
+  //printf("Outpost state before playing outpost: %i\n", G.outpostPlayed);
+  //printf("Hand count before playing outpost: %i\n", cardsInHand);
 
   //Play outpost card from player one's hand
   playCard(0, 1, 0, 0, &G);
 
 
-  printf("Outpost state after playing outpost: %i\n", G.outpostPlayed);
-  printf("Hand count after playing outpost: %i\n", G.handCount[0]);
+  //printf("Outpost state after playing outpost: %i\n", G.outpostPlayed);
+  //printf("Hand count after playing outpost: %i\n", G.handCount[0]);
+
+  //Test 1
+  printf("Test 1: Testing Outpost State\n");
+  printf("Expected outpost state: 1\n");
+  printf("Actual outpost state: %i\n", G.outpostPlayed);
+  if(G.outpostPlayed == 1)
+    printf("TEST SUCCESSFUL\n\n");
+  else
+    printf("TEST FAILED\n\n");
+
+  //Test 2
+  printf("Test 2: Testing Hand Count\n");
+  printf("Expected hand count: %i\n", cardsInHand - 1);
+  printf("Actual hand count %i\n", G.handCount[0]);
+  if(G.handCount[0] == cardsInHand - 1)
+    printf("TEST SUCCESSFUL\n\n");
+  else
+    printf("TEST FAILED\n\n");
 
   //Assert statements
-  assert(G.outpostPlayed == 1);
-  assert(G.handCount[0] == cardsInHand - 1);
+  //assert(G.outpostPlayed == 1);
+  //assert(G.handCount[0] == cardsInHand - 1);
 
-  printf("\n\nCard Test 1: Successful\n\n");
+  printf("Card Test 1: Complete\n\n");
 }
