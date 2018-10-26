@@ -28,19 +28,37 @@ int main()
   int cardsInHand = G.handCount[0];
   int actions = G.numActions;
 
-  printf("Number of actions before playing village: %i\n", actions);
-  printf("Hand count before playing outpost: %i\n", cardsInHand);
+  //printf("Number of actions before playing village: %i\n", actions);
+  //printf("Hand count before playing outpost: %i\n", cardsInHand);
 
   //Play outpost card from player one's hand
   playCard(0, 1, 0, 0, &G);
 
+  //Test 1
+  printf("Test 1: Testing Number of Actions\n");
+  printf("Expected Number of Actions: %i\n", actions + 1);
+  printf("Actual Number of Actions: %i\n", G.numActions);
+  if(G.numActions == actions + 1)
+    printf("TEST SUCCESSFUL\n\n");
+  else
+    printf("TEST FAILED\n\n");
 
-  printf("Number of actions after playing village: %i\n", G.numActions);
-  printf("Hand count after playing outpost: %i\n", G.handCount[0]);
+  //Test 2
+  printf("Test 2: Testing Hand Count\n");
+  printf("Expected Hand Count: %i\n", cardsInHand);
+  printf("Actual Hand Count: %i\n", G.handCount[0]);
+  if(cardsInHand == G.handCount[0])
+    printf("TEST SUCCESSFUL\n\n");
+  else
+    printf("TEST FAILED\n\n");
+
+
+  //printf("Number of actions after playing village: %i\n", G.numActions);
+  //printf("Hand count after playing outpost: %i\n", G.handCount[0]);
 
   //Assert statements
-  assert(G.numActions == actions + 1);
-  assert(G.handCount[0] == cardsInHand);
+  //assert(G.numActions == actions + 1);
+  //assert(G.handCount[0] == cardsInHand);
 
-  printf("\n\nCard Test 2: Successful\n\n");
+  printf("\n\nCard Test 2: Complete\n\n");
 }
