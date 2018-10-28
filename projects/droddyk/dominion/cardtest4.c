@@ -24,24 +24,50 @@ int main()
   G.handCount[0] = 1;
   G.hand[0][0] = adventurer;
 
-  assert(G.hand[0][0] == 7);
+  printf("Test 1: Ensure Adenturer is Chosen\n");
+  printf("Expected Value: 7 Actual Value: %i ", G.hand[0][0]);
+  if(G.hand[0][0] == 7)
+    printf("TEST SUCCESSFUL\n");
+  else
+    printf("TEST FAILED\n");
+
+  //assert(G.hand[0][0] == 7);
 
   int cardsInHand = G.handCount[0];
 
-  printf("Hand count before playing adventurer: %i\n", cardsInHand);
+  //printf("Hand count before playing adventurer: %i\n", cardsInHand);
 
   //Play adventurer card from player one's hand
   playCard(0, 1, 0, 0, &G);
 
-  printf("Hand count after playing adventurer: %i\n", G.handCount[0]);
-  printf("Card One: %i\n", G.hand[0][2]);
+  printf("Test 2: Ensure Proper Hand Count\n");
+  printf("Expected Value: %i Actual Value: %i ", cardsInHand + 2, G.handCount[0]);
+  if(cardsInHand + 2 == G.handCount[0])
+    printf("TEST SUCCESSFUL\n");
+  else
+    printf("TEST FAILED\n");
+
+  //printf("Hand count after playing adventurer: %i\n", G.handCount[0]);
+  //printf("Card One: %i\n", G.hand[0][2]);
 
   //Assert statements
-  assert(G.handCount[0] == cardsInHand + 2);
+  //assert(G.handCount[0] == cardsInHand + 2);
 
   //Ensures the two drawn cards are treasures (copper, silver, or gold)
-  assert(G.hand[0][1] == 4 || G.hand[0][1] == 5 || G.hand[0][1] == 6);
-  assert(G.hand[0][2] == 4 || G.hand[0][1] == 5 || G.hand[0][1] == 6);
+  printf("Test 3: Ensure First Card is Treasure\n");
+  if(G.hand[0][1] == 4 || G.hand[0][1] == 5 || G.hand[0][1] == 6)
+    printf("TEST SUCCESSFUL\n");
+  else
+    printf("TEST FAILED\n");
 
-  printf("\n\nCard Test 4: Successful\n\n");
+  printf("Test 4: Ensure Second Card is Treasure\n");
+  if(G.hand[0][2] == 4 || G.hand[0][1] == 5 || G.hand[0][1] == 6)
+    printf("TEST SUCCESSFUL\n");
+  else
+    printf("TEST FAILED\n");
+
+  //assert(G.hand[0][1] == 4 || G.hand[0][1] == 5 || G.hand[0][1] == 6);
+  //assert(G.hand[0][2] == 4 || G.hand[0][1] == 5 || G.hand[0][1] == 6);
+
+  printf("\n\nCard Test 4: Complete\n\n");
 }

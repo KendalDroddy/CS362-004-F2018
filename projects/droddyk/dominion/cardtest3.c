@@ -26,15 +26,21 @@ int main()
 
   int cardsInHand = G.handCount[0];
 
-  printf("Hand count before playing outpost: %i\n", cardsInHand);
+  //printf("Hand count before playing outpost: %i\n", cardsInHand);
 
   //Play smithy card from player one's hand
   playCard(0, 1, 0, 0, &G);
 
-  printf("Hand count after playing outpost: %i\n", G.handCount[0]);
+  printf("Expected Hand Count: %i\n", cardsInHand);
+  printf("Actual Hand Count: %i\n", G.handCount[0]);
 
   //Assert statements
-  assert(G.handCount[0] == cardsInHand + 2);
+  if(G.handCount[0] == cardsInHand + 2)
+    printf("TEST SUCCESSFUL\n");
+  else
+    printf("TEST FAILED\n");
 
-  printf("\n\nCard Test 2: Successful\n\n");
+  //assert(G.handCount[0] == cardsInHand + 2);
+
+  printf("\n\nCard Test 3: Complete\n\n");
 }
