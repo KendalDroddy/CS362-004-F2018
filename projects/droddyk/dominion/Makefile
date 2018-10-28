@@ -30,7 +30,7 @@ runtests: testDrawCard
 	cat dominion.c.gcov >> unittestresult.out
 
 #The output portion I referenced from github - https://github.com/TRMassey/softwareTesting/blob/master/DominionTests/Makefile
-unittestresults.out:
+unittestresults:
 	make cardtest1
 	make cardtest2
 	make cardtest3
@@ -86,4 +86,4 @@ player: player.c interface.o
 all: playdom player 
 
 clean:
-	rm -f *.o *.dSYM playdom.exe playdom cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 player player.exe *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
+	rm -f *.o playdom.exe playdom cardtest1 cardtest2 cardtest3 cardtest4 unittest1 unittest2 unittest3 unittest4 player player.exe *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
